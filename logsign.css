@@ -1,0 +1,253 @@
+:root {
+    --terracotta: #CB997E;
+    --dusty-rose: #DDBEA9;
+    --peach-cream: #FFEBD6;
+    --soft-apricot: #B7B7A4;
+    --sage-fern: #A5A58D;
+    --olive-green: #6B705C;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--peach-cream);
+}
+
+.container{
+    position: relative;
+    width: 850px;
+    height: 550px;
+    background-color: var(--sage-fern);
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--sage-fern);
+    overflow:hidden ;
+    margin: 20px;
+}
+
+.form_box{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--sage-fern);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--olive-green);
+    padding: 40px;
+    border-radius: 20px;
+    z-index: 1;
+    transition: .6s ease-in-out 1.2s, visibilty 0 1s;
+}
+
+.container.active .form_box{
+    right: 50%;
+}
+
+.form_box.signup{
+    visibility: hidden;
+}
+
+.container.active .form_box.signup{
+    visibility: visible;
+}
+
+form{
+    width: 100%;
+}
+
+.container h1{
+    color: var(--olive-green);
+    font-size: 36px;
+    margin: 10px 0 30px;
+    font-weight:500;
+}
+
+.inputBox{
+        position: relative;
+        margin-top: 12px;
+        margin-bottom: 10px;
+}
+
+.inputBox input{
+        width: 100%; 
+        padding: 13px 50px 13px 20px;
+        background: var(--peach-cream);    
+        border-radius: 15px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: rgb(32, 32, 30);    
+}
+
+.inputBox input::placeholder{
+    color: var(--olive-green);
+    font-weight: 400;
+}
+
+.inputBox i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--olive-green);
+}
+
+.forgotLink {
+    margin: 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgotLink  label,input {
+    accent-color: var(--peach-cream);
+    margin-right: 3px;
+}
+
+.forgotLink label{
+    color: var(--olive-green);
+}
+
+.forgotLink a{
+    font-size: 14.5px;
+    color: var(--olive-green);
+    text-decoration: none;
+}
+
+.forgotLink a:hover{
+    color: var(--peach-cream);
+}
+
+.btn{
+    width: 100%;
+    height: 48px;
+    background: var(--peach-cream);
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    color:var(--olive-green);
+    font-weight: 600;
+}
+
+.btn:hover{
+    background-color: var(--sage-fern);
+    border: 2px solid var(--peach-cream);
+    color: var(--peach-cream);
+}
+
+.btn.signupBtn{
+    margin-top: 20px;
+}
+
+.container p{
+    font-size: 14.5px;
+    margin: 20px 20px 10px;
+}
+
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+
+.socialIcons a{
+    display: inline-flex;
+    color: var(--olive-green);
+    font-size: 35px;
+    margin: 10px 8px ;
+    text-decoration: none;
+}
+
+.socialIcons a:hover{
+    color: var(--peach-cream);
+}
+
+.toggleBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.toggleBox::before{
+    content: '';
+    position: absolute;
+    left: -250%;
+    width: 300%;
+    height: 100%;
+    background-color: var(--dusty-rose);
+    border-radius: 150px;
+    z-index: 2;
+    transition: 1.8s ease-in-out;
+}
+
+.container.active .toggleBox::before{
+    left: 50%;
+}
+
+.toggelPanel{
+    /* background-color: blueviolet; */
+    position:absolute;
+    width: 50%;
+    height: 100%;
+    color: var(--olive-green);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: .6s ease-in-out;
+}
+
+.toggelPanel.lefttoggle{
+    left: 0;
+    transition-delay: 1.2s;
+}
+
+.container.active .toggelPanel.lefttoggle{
+    left: -50%;
+    transition-delay: .6s;
+}
+
+.toggelPanel.righttoggle{
+    right: -50%;
+    transition-delay: .6s;
+}
+
+.container.active .toggelPanel.righttoggle{
+    right: 0;
+    transition-delay: 1.2s;
+
+}
+
+.toggelPanel p{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.toggelPanel .btn{
+    width: 200px;
+    height: 46px;
+    background:transparent;
+    border: 2px solid var(--olive-green);
+    color: var(--olive-green);
+    box-shadow: none;
+}
+
+.toggelPanel .btn:hover{
+    border: 2px solid var(--peach-cream);
+    color: var(--peach-cream);
+}
+

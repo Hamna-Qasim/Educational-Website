@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  
+    <link rel="stylesheet" href="logsign.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form_box login">
+        <form>
+            <h1>Login</h1>
+
+            <div class="inputBox">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="inputBox">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="forgotLink">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn loginBtn">Login</button>
+            <p>or continue with</p>
+            <div class="socialIcons">
+                <a href="#"><i class='bx bxl-google'></i></a>
+                <a href="#"><i class='bx bxl-github' ></i></a>
+                <a href="#"><i class='bx bxl-apple' ></i></a>
+            </div>
+
+        </form>
+        </div>
+
+        <div class="form_box signup">
+            <form>
+                <h1>Signup</h1>
+    
+                <div class="inputBox">
+                    <input type="text" placeholder="Example@gmail.com" required>
+                    <i class='bx bxs-envelope' ></i>
+                </div>
+                
+                <div class="inputBox">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+    
+                <div class="inputBox">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+    
+                <button type="submit" class="btn signupBtn">Signup</button>
+                <p>or continue with</p>
+                <div class="socialIcons">
+                    <a href="#"><i class='bx bxl-google'></i></a>
+                    <a href="#"><i class='bx bxl-github' ></i></a>
+                    <a href="#"><i class='bx bxl-apple' ></i></a>
+                </div>
+            </form>
+        </div>
+        
+        <div class="toggleBox">
+            <div class="toggelPanel lefttoggle">
+                <h1>Welcome Back!</h1>
+                <p>Dont have an account?</p>
+                <button class="btn signupButton">SignUp</button>
+            </div>
+            <div class="toggelPanel righttoggle">
+                <h1>Welcome Aboard!</h1>
+                <p>Already have an account?</p>
+                <button class="btn loginButton">Login</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="logsign.js"></script>
+</body>
+</html>

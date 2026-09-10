@@ -1,0 +1,347 @@
+:root {
+    --terracotta: #CB997E;
+    --dusty-rose: #DDBEA9;
+    --peach-cream: #FFEBD6;
+    --soft-apricot: #B7B7A4;
+    --sage-fern: #A5A58D;
+    --olive-green: #6B705C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--peach-cream);
+    color: var(--olive-green);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+.nav__logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--terracotta);
+    text-decoration: none;
+}
+
+.nav__logo span {
+    color: var(--olive-green);
+}
+
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav__links a {
+    text-decoration: none;
+    color: var(--terracotta);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav__links a:hover{
+    color: var(--olive-green);
+}
+
+
+.nav__btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block; 
+    background-color: var(--terracotta);
+    color: var(--olive-green);
+    min-width: 60px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+}
+
+.btn:hover {
+    background-color: var(--olive-green);
+    color: var(--terracotta);
+}
+
+.container {
+    border-radius: 10px;
+    background-color: rgba(165, 165, 141, 0.7);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures space between text and image */
+    text-align: left;
+    padding: 50px 20px;
+    gap: 50px;
+    
+}
+
+/* Left Side (Text & Button) */
+.text-content {
+    margin-left: 10%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    color: var(--dusty-rose);
+    font-weight: bold;
+}
+
+.text-content h1{
+    font-size: 50px;
+    color: var(--peach-cream);
+}
+
+.text-content .btn{
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    padding: 8px;
+    background-color: var(--olive-green);
+    color: var(--peach-cream);
+    margin-top: 10px;
+}
+
+.text-content .btn:hover{
+    background-color: var(--peach-cream);
+    color: var(--olive-green);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2 columns */
+    grid-gap: 10px; /* Spacing between images */
+    max-width: 40%;
+    margin-right: 10%;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px; /* Optional styling */
+    object-fit: cover; 
+}
+
+footer {
+    background-color: var(--soft-apricot);
+    padding: 0 15px;
+    height: 80px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between; /* Aligns elements horizontally */
+    align-items: center; /* Centers items vertically */
+    width: 100%;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--olive-green);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: var(--peach-cream);
+}
+
+footer p {
+    font-size: 14px;
+    color: var(--olive-green);
+}
+.company-logos {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.company-logos p {
+    font-size: 1.2rem;
+    color: var(--olive-green);
+    margin-bottom: 15px;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between logos */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.logos img {
+    height: 50px; /* Adjust logo height */
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logos img:hover {
+    transform: scale(1.1);
+}
+
+.features {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--peach-cream);
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--terracotta);
+    color: white;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--olive-green);
+    margin-top: 10px;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes it responsive */
+}
+
+.card {
+    background-image: url(images/e04fc15aff556affc059a5c42404f74f.jpg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    color: var(--terracotta);
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--sage-fern);
+}
+
+.testimonials {
+    width: 100%;
+    background-color: var(--peach-cream);
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+}
+
+.section-header {
+    text-align: center;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: center; /* Centers cards horizontally */
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px; /* Prevents cards from stretching too wide */
+    margin: 0 auto; /* Ensures full section centering */
+}
+
+.card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background-color: var(--soft-apricot);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.badge {
+    display: inline-block;
+    background-color: var(--terracotta);
+    color: var(--peach-cream);
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+h2 {
+    color: var(--olive-green);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+
+.testimonial-text {
+    font-size: 1.1rem;
+    color: var(--olive-green);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--terracotta);
+    font-size: 1.2rem;
+    font-weight: bold;
+} 
+
