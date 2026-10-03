@@ -14,16 +14,16 @@
     
     <div class="container">
         <div class="form_box login">
-        <form>
+        <form id="loginForm">
             <h1>Login</h1>
 
             <div class="inputBox">
-                <input type="text" placeholder="Username" required>
+                <input type="text" id="loginUsername" placeholder="Username" required>
                 <i class='bx bxs-user'></i>
             </div>
 
             <div class="inputBox">
-                <input type="password" placeholder="Password" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
 
@@ -33,6 +33,7 @@
             </div>
 
             <button type="submit" class="btn loginBtn">Login</button>
+            <p id="loginMessage"></p>
             <p>or continue with</p>
             <div class="socialIcons">
                 <a href="#"><i class='bx bxl-google'></i></a>

@@ -1,0 +1,6 @@
+.git
+backend
+docker-compose.yml
+Dockerfile
+.dockerignore
+ReadMe.docx
