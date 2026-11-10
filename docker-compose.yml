@@ -1,10 +1,15 @@
+
 services:
   frontend:
-    build: ./frontend
+    image: hamna1243/dev_ops:ci-frontend
+    container_name: educational-frontend
     ports:
       - "80:80"
     depends_on:
       - backend
-  
+    restart: unless-stopped
+
   backend:
-    build: ./backend 
+    image: hamna1243/dev_ops:ci-backend
+    container_name: educational-backend
+    restart: unless-stopped
