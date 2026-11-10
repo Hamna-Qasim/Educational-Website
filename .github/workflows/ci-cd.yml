@@ -1,0 +1,61 @@
+
+name: Educational Website CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Validate Dockerfiles
+      - name: Validate Project Files
+        run: |
+          test -f frontend/Dockerfile
+          test -f backend/Dockerfile
+          echo "Dockerfiles found successfully"
+
+      # 3. Build frontend image
+      - name: Build Frontend Image
+        run: |
+          docker build ./frontend \
+            -t hamna1243/dev_ops:ci-frontend
+
+      # 4. Build backend image
+      - name: Build Backend Image
+        run: |
+          docker build ./backend \
+            -t hamna1243/dev_ops:ci-backend
+
+      # 5. Validate Docker images
+      - name: Test Docker Images
+        run: |
+          docker image inspect hamna1243/dev_ops:ci-frontend
+          docker image inspect hamna1243/dev_ops:ci-backend
+
+      # 6. Login to Docker Hub
+      - name: Login to Docker Hub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # 7. Push frontend image
+      - name: Push Frontend Image
+        if: github.event_name != 'pull_request'
+        run: docker push hamna1243/dev_ops:ci-frontend
+
+      # 8. Push backend image
+      - name: Push Backend Image
+        if: github.event_name != 'pull_request'
+        run: docker push hamna1243/dev_ops:ci-backend
